@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Castle : MonoBehaviour
 {
-    private float startHealth = 100;
+    private float startHealth = 100f;
 
     public float health;
 

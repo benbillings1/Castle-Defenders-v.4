@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class EnemyDragon : MonoBehaviour
 {
-    private float startHealth = 100;
+    private float startHealth = 100f;
 
-    public float damage = 10;
+    public float damage = 10f;
     public float health;
     public Image healthBar;
 

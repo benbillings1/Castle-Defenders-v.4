@@ -112,6 +112,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &48576318 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5919545983499933069, guid: 042fa66768bdc5743b49debf930fe2be,
+    type: 3}
+  m_PrefabInstance: {fileID: 533748020}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &64708919
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,7 +545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1120435156, guid: cd328ad95e91bb447b33565ba16f410e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.92
+      value: 1.12
       objectReference: {fileID: 0}
     - target: {fileID: 1120435156, guid: cd328ad95e91bb447b33565ba16f410e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -595,10 +607,10 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[5]
       value: 
       objectReference: {fileID: 1486686797}
-    - target: {fileID: 1548278488, guid: cd328ad95e91bb447b33565ba16f410e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.27
-      objectReference: {fileID: 0}
+    - target: {fileID: 2028397281, guid: cd328ad95e91bb447b33565ba16f410e, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 719053208}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd328ad95e91bb447b33565ba16f410e, type: 3}
 --- !u!1001 &533748020
@@ -730,18 +742,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 042fa66768bdc5743b49debf930fe2be, type: 3}
---- !u!114 &533748021 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5919545981955803517, guid: 042fa66768bdc5743b49debf930fe2be,
-    type: 3}
-  m_PrefabInstance: {fileID: 533748020}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,6 +988,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 082f5583fc8c4064eb0c07228e89abf1, type: 3}
+--- !u!114 &719053208 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5919545981692816381, guid: db48c6e1eaec5a44aa0e77ab4ab1b7a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1275535771}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &796528591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,8 +1535,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  healthBar: {fileID: 533748021}
-  endNode: {fileID: 0}
+  healthBar: {fileID: 48576318}
+  endNode: {fileID: 1486686797}
 --- !u!65 &1409107103
 BoxCollider:
   m_ObjectHideFlags: 0
