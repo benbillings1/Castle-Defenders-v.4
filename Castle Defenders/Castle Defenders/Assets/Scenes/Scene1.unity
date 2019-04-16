@@ -1156,6 +1156,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireDamage: 10
   health: 100
+  target: {fileID: 0}
+  dragonRange: 10
+  dragonRotate: {fileID: 0}
 --- !u!135 &1027374408
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1390,6 +1393,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1877050252, guid: db48c6e1eaec5a44aa0e77ab4ab1b7a8, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1485257570}
+    - target: {fileID: 1877050252, guid: db48c6e1eaec5a44aa0e77ab4ab1b7a8, type: 3}
+      propertyPath: dragonRotate
+      value: 
+      objectReference: {fileID: 1485257570}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db48c6e1eaec5a44aa0e77ab4ab1b7a8, type: 3}
 --- !u!1001 &1296457156
@@ -1550,6 +1561,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 4.626495, z: 20}
   m_Center: {x: -2.6500006, y: 1.2176855, z: -4.1761146}
+--- !u!4 &1485257570 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7539084745368148845, guid: db48c6e1eaec5a44aa0e77ab4ab1b7a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1275535771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1486686796
 GameObject:
   m_ObjectHideFlags: 0

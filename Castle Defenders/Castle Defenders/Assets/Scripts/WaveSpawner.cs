@@ -9,7 +9,7 @@ public class WaveSpawner : MonoBehaviour
     public Transform spawnPoint;
     public Text wave;
 
-    private float timeBetweenWaves = 10f;
+    private float timeBetweenWaves = 15f;
     private int enemyCount = 0;
     private int waveNumber = 0;
 
@@ -34,7 +34,7 @@ public class WaveSpawner : MonoBehaviour
         for (int i = 0; i < enemyCount; i++)
         {
             spawnEnemy();
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
         }
 
         
