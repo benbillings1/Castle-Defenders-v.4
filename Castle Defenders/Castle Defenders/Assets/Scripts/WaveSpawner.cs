@@ -8,8 +8,9 @@ public class WaveSpawner : MonoBehaviour
     public Transform enemyPrefab;
     public Transform spawnPoint;
     public Text wave;
+    public Transform[] waypoints;
 
-    private float timeBetweenWaves = 15f;
+    private float timeBetweenWaves = 20f;
     private int enemyCount = 0;
     private int waveNumber = 0;
 
@@ -20,7 +21,7 @@ public class WaveSpawner : MonoBehaviour
         if (timeBetweenWaves <= 0f)
         {
             StartCoroutine(spawnWaves());
-            timeBetweenWaves = 15f;
+            timeBetweenWaves = 10f;
         }
         
         timeBetweenWaves -= Time.deltaTime;
@@ -43,7 +44,10 @@ public class WaveSpawner : MonoBehaviour
 
     void spawnEnemy()
     {
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        
+        GameObject dragon = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation).gameObject;
+
+        dragon.GetComponent<dragonmovement>().SetNodes(waypoints);
     }
 
 }

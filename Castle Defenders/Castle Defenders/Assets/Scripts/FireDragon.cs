@@ -5,28 +5,28 @@ using UnityEngine;
 
 public class FireDragon : MonoBehaviour
 {
-    public int fireDamage = 10;
+    public int fireDamage = 20;
     public int health = 100;
     public Transform target;
     public float dragonRange = 20f;
     public Transform dragonRotate;
     public float rotationSpeed = 10f;
 
-    private EnemyDragon enemyDragon;
+    //private EnemyDragon enemyDragon;
 
 
     void Start()
     {
-        GameObject enemyDragonObject = GameObject.FindWithTag("Enemy");
+        //GameObject enemyDragonObject = GameObject.FindWithTag("Enemy");
 
-        if (enemyDragonObject != null)
-        {
-            enemyDragon = enemyDragonObject.GetComponent<EnemyDragon>();
-        }
-        if (enemyDragonObject == null)
-        {
-            Debug.Log("Cannot find 'EnemyDragon' script");
-        }
+        //if (enemyDragonObject != null)
+        //{
+            //enemyDragon = enemyDragonObject.GetComponent<EnemyDragon>();
+        //}
+        //if (enemyDragonObject == null)
+        //{
+           // Debug.Log("Cannot find 'EnemyDragon' script");
+        //}
 
 
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
@@ -61,6 +61,7 @@ public class FireDragon : MonoBehaviour
         if (closestEnemy != null && closestDistance <= dragonRange)
         {
             target = closestEnemy.transform;
+            closestEnemy.GetComponent<EnemyDragon>().TakeDamage(fireDamage);
         }
         else
         {
@@ -68,16 +69,16 @@ public class FireDragon : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            enemyDragon.TakeDamage(fireDamage);
-        }
+    //void OnTriggerEnter(Collider other)
+    //{
+        //if (other.CompareTag("Enemy"))
+        //{
+            //enemyDragon.TakeDamage(fireDamage);
+        //}
 
         
 
-    }
+    //}
 
     private void OnDrawGizmos()
     {

@@ -8,13 +8,14 @@ public class dragonmovement : MonoBehaviour
     public Transform[] waypoints;
     public Transform dragonModel;
     int curNodeIndex = 0;
-    // Start is called before the first frame update
+    
+
     void Start()
     {
         curNodeTarget = waypoints[0];
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         //Makes dragon move toward nodes
@@ -43,4 +44,11 @@ public class dragonmovement : MonoBehaviour
             
         }
     }
+
+
+    public void SetNodes(Transform[] nodes)
+    {
+        waypoints = nodes;
+    }
+
 }

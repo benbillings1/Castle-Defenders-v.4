@@ -18,6 +18,12 @@ public class Castle : MonoBehaviour
         health = startHealth;
     }
 
+    public void Update()
+    {
+        if (health <= 0f)
+            Destroy(gameObject);
+    }
+
 
     public void TakeDamage(float amount)
     {
@@ -28,12 +34,13 @@ public class Castle : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.transform.position == endNode.position)
+        if (other.CompareTag("Enemy"))
         {
-            TakeDamage(other.gameObject.GetComponent<EnemyDragon>().damage);
+            TakeDamage(other.gameObject.GetComponent<EnemyDragon>().damage * Time.deltaTime * .1f);
             
         }
+        
     }    
 }
