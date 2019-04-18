@@ -8,7 +8,7 @@ public class FireDragon : MonoBehaviour
     public int fireDamage = 20;
     public int health = 100;
     public Transform target;
-    public float dragonRange = 20f;
+    public float dragonRange = 25f;
     public Transform dragonRotate;
     public float rotationSpeed = 10f;
 

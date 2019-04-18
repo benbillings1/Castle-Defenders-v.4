@@ -140,6 +140,8 @@ MonoBehaviour:
   health: 100
   target: {fileID: 0}
   dragonRange: 20
+  dragonRotate: {fileID: 7539084745368148845}
+  rotationSpeed: 10
 --- !u!1001 &1954463344
 PrefabInstance:
   m_ObjectHideFlags: 0

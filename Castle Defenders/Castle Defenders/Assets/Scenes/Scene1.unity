@@ -269,6 +269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 200695259}
   - component: {fileID: 200695260}
+  - component: {fileID: 200695262}
   m_Layer: 0
   m_Name: Nodes
   m_TagString: Untagged
@@ -319,6 +320,20 @@ MonoBehaviour:
   - {fileID: 876289349}
   - {fileID: 589007628}
   - {fileID: 1486686797}
+--- !u!114 &200695262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200695258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870dcea2c8bb2cb4abdcc429504eb727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardDragonPrefab: {fileID: 1489197333772947530, guid: db48c6e1eaec5a44aa0e77ab4ab1b7a8,
+    type: 3}
 --- !u!114 &238195491 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5919545981876909762, guid: cd328ad95e91bb447b33565ba16f410e,
@@ -1018,6 +1033,7 @@ GameObject:
   - component: {fileID: 796528594}
   - component: {fileID: 796528593}
   - component: {fileID: 796528592}
+  - component: {fileID: 796528595}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -1086,6 +1102,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &796528595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796528591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee3be85748bc011418768af4b5f0f5d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &876289348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,14 +1290,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1877050252, guid: db48c6e1eaec5a44aa0e77ab4ab1b7a8, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1877050252, guid: db48c6e1eaec5a44aa0e77ab4ab1b7a8, type: 3}
-      propertyPath: dragonRotate
-      value: 
-      objectReference: {fileID: 1485257570}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db48c6e1eaec5a44aa0e77ab4ab1b7a8, type: 3}
 --- !u!1001 &1296457156
@@ -1430,12 +1450,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 4.626495, z: 20}
   m_Center: {x: -2.6500006, y: 1.2176855, z: -4.1761146}
---- !u!4 &1485257570 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7539084745368148845, guid: db48c6e1eaec5a44aa0e77ab4ab1b7a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1275535771}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1486686796
 GameObject:
   m_ObjectHideFlags: 0
