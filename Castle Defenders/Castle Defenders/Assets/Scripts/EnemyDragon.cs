@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class EnemyDragon : MonoBehaviour
 {
     private float startHealth = 100f;
+    private int gold = 25;
+    private Currency currency;
 
     public float damage = 10f;
     public float health;
@@ -15,6 +17,17 @@ public class EnemyDragon : MonoBehaviour
 
     private void Start()
     {
+        GameObject currencyObject = GameObject.FindWithTag("Currency");
+
+        if (currency != null)
+        {
+        currency = currencyObject.GetComponent<Currency>();
+        }
+        if (currencyObject == null)
+        {
+         Debug.Log("Cannot find 'Currency' script");
+        }
+
         health = startHealth;
         healthBar.fillAmount = 1;
     }
@@ -28,8 +41,10 @@ public class EnemyDragon : MonoBehaviour
 
         if (health <= 0f)
         {
+            //currency.AddGold(gold);
             gameObject.SetActive(false);
             Destroy(gameObject);
+            
         }
 
 

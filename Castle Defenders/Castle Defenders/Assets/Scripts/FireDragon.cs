@@ -8,7 +8,7 @@ public class FireDragon : MonoBehaviour
     public int fireDamage = 20;
     public int health = 100;
     public Transform target;
-    public float dragonRange = 25f;
+    public float dragonRange;
     public Transform dragonRotate;
     public float rotationSpeed = 10f;
 
@@ -21,14 +21,14 @@ public class FireDragon : MonoBehaviour
 
         //if (enemyDragonObject != null)
         //{
-            //enemyDragon = enemyDragonObject.GetComponent<EnemyDragon>();
+        //enemyDragon = enemyDragonObject.GetComponent<EnemyDragon>();
         //}
         //if (enemyDragonObject == null)
         //{
-           // Debug.Log("Cannot find 'EnemyDragon' script");
+        // Debug.Log("Cannot find 'EnemyDragon' script");
         //}
 
-
+        dragonRange = 30f;
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
