@@ -18,16 +18,18 @@ public class BuildManager : MonoBehaviour
     }
 
     public GameObject standardDragonPrefab;
-
-    void Start()
-    {
-        dragonToBuild = standardDragonPrefab;
-    }
+    public GameObject anotherDragonPrefab;
+    
 
     private GameObject dragonToBuild;
 
     public GameObject GetDragonToBuild()
     {
         return dragonToBuild;
+    }
+
+    public void SetDragonToBuild(GameObject dragon)
+    {
+        dragonToBuild = dragon;
     }
 }

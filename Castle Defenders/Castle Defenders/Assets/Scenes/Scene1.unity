@@ -1490,6 +1490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standardDragonPrefab: {fileID: 1489197333772947530, guid: db48c6e1eaec5a44aa0e77ab4ab1b7a8,
     type: 3}
+  anotherDragonPrefab: {fileID: 0}
 --- !u!1001 &211224869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10999,6 +11000,7 @@ GameObject:
   - component: {fileID: 1398989899}
   - component: {fileID: 1398989898}
   - component: {fileID: 1398989900}
+  - component: {fileID: 1398989901}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -11023,8 +11025,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -312.1, y: 86}
-  m_SizeDelta: {x: -624.6, y: -172}
+  m_AnchoredPosition: {x: -301.3, y: 86}
+  m_SizeDelta: {x: -602.9, y: -172}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1398989898
 MonoBehaviour:
@@ -11033,7 +11035,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398989896}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -11086,6 +11088,18 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
+--- !u!114 &1398989901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398989896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b269be13394774696a3de84597fcdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1399845696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16009,7 +16023,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 70.3, y: 30}
+  m_SizeDelta: {x: 77.3, y: 49.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1972338161
 MonoBehaviour:
@@ -16050,7 +16064,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1972338162}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1398989901}
+        m_MethodName: PurchaseFireDragon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1972338162
@@ -16073,8 +16098,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 7d4e98b7db1744b4498ad944990f5a81, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

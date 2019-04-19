@@ -7,7 +7,7 @@ public class EnemyDragon : MonoBehaviour
 {
     private float startHealth = 100f;
     private int gold = 25;
-    private Currency currency;
+    Currency currency;
 
     public float damage = 10f;
     public float health;
@@ -17,16 +17,7 @@ public class EnemyDragon : MonoBehaviour
 
     private void Start()
     {
-        GameObject currencyObject = GameObject.FindWithTag("Currency");
-
-        if (currency != null)
-        {
-        currency = currencyObject.GetComponent<Currency>();
-        }
-        if (currencyObject == null)
-        {
-         Debug.Log("Cannot find 'Currency' script");
-        }
+        //currency = Currency.instance;
 
         health = startHealth;
         healthBar.fillAmount = 1;
