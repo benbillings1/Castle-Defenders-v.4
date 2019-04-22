@@ -21,11 +21,4 @@ public class Currency : MonoBehaviour
         Text.text = "Gold: " + gold.ToString();
     }
 
-    public void AddGold(int amount)
-    {
-        gold += amount;
-        Text.text = "Gold: " + gold.ToString();
-    }
-
-
 }

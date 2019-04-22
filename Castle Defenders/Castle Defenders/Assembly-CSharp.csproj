@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\DragonBlueprint.cs" />
     <Compile Include="Assets\Scripts\dragonmovement.cs" />
     <Compile Include="Assets\Scripts\EnemyDragon.cs" />
+    <Compile Include="Assets\Scripts\EnemyRockDragon.cs" />
     <Compile Include="Assets\Scripts\FireDragon.cs" />
     <Compile Include="Assets\Scripts\Node.cs" />
     <Compile Include="Assets\Scripts\Shop.cs" />

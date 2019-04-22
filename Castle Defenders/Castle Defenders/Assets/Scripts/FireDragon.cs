@@ -45,7 +45,9 @@ public class FireDragon : MonoBehaviour
 
     void UpdateTarget()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        List<GameObject> enemies = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
+        List<GameObject> myEnemies = new List<GameObject>(GameObject.FindGameObjectsWithTag("Rock"));
+        enemies.AddRange(myEnemies);
         float closestDistance = Mathf.Infinity;
         GameObject closestEnemy = null;
         foreach (GameObject enemy in enemies) 
@@ -61,7 +63,15 @@ public class FireDragon : MonoBehaviour
         if (closestEnemy != null && closestDistance <= dragonRange)
         {
             target = closestEnemy.transform;
-            closestEnemy.GetComponent<EnemyDragon>().TakeDamage(fireDamage);
+            if (closestEnemy.CompareTag("Rock"))
+            {
+                closestEnemy.GetComponent<EnemyRockDragon>().TakeDamage(fireDamage / 2);
+            }
+            else
+            {
+                closestEnemy.GetComponent<EnemyDragon>().TakeDamage(fireDamage);
+            }
+                
         }
         else
         {

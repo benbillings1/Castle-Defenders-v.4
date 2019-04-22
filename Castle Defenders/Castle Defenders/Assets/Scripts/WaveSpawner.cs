@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class WaveSpawner : MonoBehaviour
 {
     public Transform enemyPrefab;
+    public Transform enemyRockPrefab;
     public Transform spawnPoint;
     public Text wave;
     public Transform[] waypoints;
 
     private float timeBetweenWaves = 20f;
     private int enemyCount = 0;
+    private int enemyRockCount = 0;
     private int waveNumber = 0;
 
     private void Update()
@@ -21,7 +23,7 @@ public class WaveSpawner : MonoBehaviour
         if (timeBetweenWaves <= 0f)
         {
             StartCoroutine(spawnWaves());
-            timeBetweenWaves = 10f;
+            timeBetweenWaves = 15f;
         }
         
         timeBetweenWaves -= Time.deltaTime;
@@ -38,6 +40,15 @@ public class WaveSpawner : MonoBehaviour
             yield return new WaitForSeconds(2f);
         }
 
+        if (waveNumber >= 5)
+        {
+            enemyRockCount++;
+            for (int i = 0; i < enemyRockCount; i++)
+            {
+                spawnRockEnemy();
+                yield return new WaitForSeconds(3f);
+            }
+        }
         
         
     }
@@ -48,6 +59,14 @@ public class WaveSpawner : MonoBehaviour
         GameObject dragon = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation).gameObject;
 
         dragon.GetComponent<dragonmovement>().SetNodes(waypoints);
+    }
+
+    void spawnRockEnemy()
+    {
+
+        GameObject rockDragon = Instantiate(enemyRockPrefab, spawnPoint.position, spawnPoint.rotation).gameObject;
+
+        rockDragon.GetComponent<dragonmovement>().SetNodes(waypoints);
     }
 
 }
