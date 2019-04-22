@@ -732,7 +732,6 @@ GameObject:
   - component: {fileID: 90265266}
   - component: {fileID: 90265269}
   - component: {fileID: 90265268}
-  - component: {fileID: 90265267}
   m_Layer: 5
   m_Name: Gold Counter
   m_TagString: Currency
@@ -759,18 +758,6 @@ RectTransform:
   m_AnchoredPosition: {x: -80, y: 128.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &90265267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90265265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab19b21af4608994f9d6d726fb65648f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &90265268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1420,6 +1407,7 @@ GameObject:
   - component: {fileID: 200695259}
   - component: {fileID: 200695260}
   - component: {fileID: 200695262}
+  - component: {fileID: 200695261}
   m_Layer: 0
   m_Name: Nodes
   m_TagString: Untagged
@@ -1476,6 +1464,20 @@ MonoBehaviour:
   - {fileID: 910637524}
   - {fileID: 1626906192}
   - {fileID: 1486686797}
+--- !u!114 &200695261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200695258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab19b21af4608994f9d6d726fb65648f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Text: {fileID: 90265268}
+  startGold: 400
 --- !u!114 &200695262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1490,7 +1492,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   standardDragonPrefab: {fileID: 1489197333772947530, guid: db48c6e1eaec5a44aa0e77ab4ab1b7a8,
     type: 3}
-  anotherDragonPrefab: {fileID: 0}
+  anotherDragonPrefab: {fileID: 4249100193156144861, guid: d83d304e4d14f5444bfb107a374e2e65,
+    type: 3}
 --- !u!1001 &211224869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11100,6 +11103,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b269be13394774696a3de84597fcdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireDragon:
+    prefab: {fileID: 1489197333772947530, guid: db48c6e1eaec5a44aa0e77ab4ab1b7a8,
+      type: 3}
+    cost: 100
+  bombDragon:
+    prefab: {fileID: 4249100193156144861, guid: d83d304e4d14f5444bfb107a374e2e65,
+      type: 3}
+    cost: 200
 --- !u!1001 &1399845696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16066,7 +16077,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1398989901}
-        m_MethodName: PurchaseFireDragon
+        m_MethodName: SelectFireDragon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

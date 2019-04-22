@@ -21,14 +21,28 @@ public class BuildManager : MonoBehaviour
     public GameObject anotherDragonPrefab;
     
 
-    private GameObject dragonToBuild;
+    private DragonBlueprint dragonToBuild;
+    
+    public bool CanBuild { get { return dragonToBuild != null; } }
 
-    public GameObject GetDragonToBuild()
+    public void BuildDragonOn (Node node)
     {
-        return dragonToBuild;
+        if (Currency.gold < dragonToBuild.cost)
+        {
+            Debug.Log("Not enough money to build that!");
+            return;
+        }
+
+        Currency.gold -= dragonToBuild.cost;
+
+
+        GameObject dragon = (GameObject)Instantiate(dragonToBuild.prefab, node.transform.position, Quaternion.identity);
+        node.dragon = dragon;
+
+        Debug.Log("Dragon built! Gold left: " + Currency.gold.ToString());
     }
 
-    public void SetDragonToBuild(GameObject dragon)
+    public void SelectDragonToBuild(DragonBlueprint dragon)
     {
         dragonToBuild = dragon;
     }

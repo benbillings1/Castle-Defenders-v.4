@@ -5,8 +5,9 @@ using UnityEngine;
 public class Node : MonoBehaviour
 {
     public Color hoverColor;
+    [Header("Optional")]
+    public GameObject dragon;
 
-    private GameObject dragon;
     private Renderer rend;
     private Color startColor;
 
@@ -22,7 +23,8 @@ public class Node : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if (buildManager.GetDragonToBuild() == null)
+
+        if (!buildManager.CanBuild)
         {
             return;
         }
@@ -32,7 +34,7 @@ public class Node : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (buildManager.GetDragonToBuild() == null)
+        if (!buildManager.CanBuild)
         {
             return;
         }
@@ -43,8 +45,7 @@ public class Node : MonoBehaviour
             return;
         }
 
-        GameObject dragonToBuild = buildManager.GetDragonToBuild();
-        dragon = (GameObject)Instantiate(dragonToBuild, transform.position, transform.rotation);
+        buildManager.BuildDragonOn(this);
     }
 
     void OnMouseExit()

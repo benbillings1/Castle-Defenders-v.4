@@ -5,6 +5,9 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
 
+    public DragonBlueprint fireDragon;
+    public DragonBlueprint bombDragon;
+
     BuildManager buildManager;
 
     void Start()
@@ -12,16 +15,16 @@ public class Shop : MonoBehaviour
         buildManager = BuildManager.instance;
     }
 
-    public void PurchaseFireDragon()
+    public void SelectFireDragon()
     {
-        Debug.Log("Fire Dragon Bought");
-        buildManager.SetDragonToBuild(buildManager.standardDragonPrefab);
+        Debug.Log("Fire Dragon Selected");
+        buildManager.SelectDragonToBuild(fireDragon);
     }
 
-    public void PurchaseBombDragon()
+    public void SelectBombDragon()
     {
-        Debug.Log("Bomb Dragon Bought");
-        buildManager.SetDragonToBuild(buildManager.anotherDragonPrefab);
+        Debug.Log("Bomb Dragon Seected");
+        buildManager.SelectDragonToBuild(bombDragon);
     }
 }
 

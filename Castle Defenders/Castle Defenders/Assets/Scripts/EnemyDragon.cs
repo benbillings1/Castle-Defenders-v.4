@@ -17,7 +17,12 @@ public class EnemyDragon : MonoBehaviour
 
     private void Start()
     {
-        //currency = Currency.instance;
+        GameObject currencyObject = GameObject.FindWithTag("Currency");
+
+        if (currencyObject != null)
+        {
+            currency = currencyObject.GetComponent<Currency>();
+        }
 
         health = startHealth;
         healthBar.fillAmount = 1;
@@ -32,7 +37,8 @@ public class EnemyDragon : MonoBehaviour
 
         if (health <= 0f)
         {
-            //currency.AddGold(gold);
+
+            currency.AddGold(gold);
             gameObject.SetActive(false);
             Destroy(gameObject);
             
