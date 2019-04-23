@@ -13,6 +13,7 @@ public class Castle : MonoBehaviour
     public Image healthBar;
     public Transform endNode;
     public GameObject gameOver;
+    public GameObject startMessage;
 
     private bool dead = false;
 
@@ -21,6 +22,7 @@ public class Castle : MonoBehaviour
     {
         health = startHealth;
         gameOver.SetActive(false);
+        StartCoroutine(spawnStartMessage());
     }
 
     public void Update()
@@ -29,8 +31,8 @@ public class Castle : MonoBehaviour
         {
             dead = true;
             StartCoroutine(spawnGameOver());
-            
-            
+
+
         }
 
 
@@ -65,11 +67,17 @@ public class Castle : MonoBehaviour
     IEnumerator spawnGameOver()
     {
 
-        
+
         MakeActive(gameOver);
         yield return new WaitForSeconds(4f);
         SceneManager.LoadScene("Scene1");
 
 
+    }
+
+    IEnumerator spawnStartMessage()
+    {
+        yield return new WaitForSeconds(4f);
+        startMessage.SetActive(false);
     }
 }

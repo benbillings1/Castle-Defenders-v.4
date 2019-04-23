@@ -11,7 +11,7 @@ public class WaveSpawner : MonoBehaviour
     public Text wave;
     public Transform[] waypoints;
 
-    private float timeBetweenWaves = 10f;
+    private float timeBetweenWaves = 20f;
     private int enemyCount = 0;
     private int enemyRockCount = 0;
     private int waveNumber = 0;
@@ -23,7 +23,7 @@ public class WaveSpawner : MonoBehaviour
         if (timeBetweenWaves <= 0f)
         {
             StartCoroutine(spawnWaves());
-            timeBetweenWaves = 5f;
+            timeBetweenWaves = 15f;
         }
         
         timeBetweenWaves -= Time.deltaTime;

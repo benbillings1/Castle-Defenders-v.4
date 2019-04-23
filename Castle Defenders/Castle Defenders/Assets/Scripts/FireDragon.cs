@@ -11,6 +11,7 @@ public class FireDragon : MonoBehaviour
     public float dragonRange;
     public Transform dragonRotate;
     public float rotationSpeed = 10f;
+    public AudioClip fireSounds;
 
     //private EnemyDragon enemyDragon;
 
@@ -66,10 +67,13 @@ public class FireDragon : MonoBehaviour
             if (closestEnemy.CompareTag("Rock"))
             {
                 closestEnemy.GetComponent<EnemyRockDragon>().TakeDamage(fireDamage / 2);
+                GetComponent<AudioSource>().PlayOneShot(fireSounds);
+
             }
             else
             {
                 closestEnemy.GetComponent<EnemyDragon>().TakeDamage(fireDamage);
+                GetComponent<AudioSource>().PlayOneShot(fireSounds);
             }
                 
         }
