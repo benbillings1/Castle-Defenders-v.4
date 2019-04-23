@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Castle : MonoBehaviour
 {
@@ -11,17 +12,29 @@ public class Castle : MonoBehaviour
 
     public Image healthBar;
     public Transform endNode;
+    public GameObject gameOver;
+
+    private bool dead = false;
 
 
     private void Start()
     {
         health = startHealth;
+        gameOver.SetActive(false);
     }
 
     public void Update()
     {
-        if (health <= 0f)
-            Destroy(gameObject);
+        if (health <= 0f && !dead)
+        {
+            dead = true;
+            StartCoroutine(spawnGameOver());
+            
+            
+        }
+
+
+
     }
 
 
@@ -39,8 +52,24 @@ public class Castle : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             TakeDamage(other.gameObject.GetComponent<EnemyDragon>().damage * Time.deltaTime * .1f);
-            
+
         }
+
+    }
+
+    public void MakeActive(GameObject text)
+    {
+        text.SetActive(true);
+    }
+
+    IEnumerator spawnGameOver()
+    {
+
         
-    }    
+        MakeActive(gameOver);
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene("Scene1");
+
+
+    }
 }
