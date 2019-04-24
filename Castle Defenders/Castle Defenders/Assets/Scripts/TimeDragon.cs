@@ -2,36 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class FireDragon : MonoBehaviour
+public class TimeDragon : MonoBehaviour
 {
-    public int fireDamage = 20;
     public Transform target;
     public float dragonRange;
     public Transform dragonRotate;
     public float rotationSpeed = 10f;
-    public AudioClip fireSounds;
-    public GameObject fireParticles;
-    public Transform mouth;
-
-    //private EnemyDragon enemyDragon;
+    public AudioClip slowSound;
 
 
     void Start()
     {
-        //GameObject enemyDragonObject = GameObject.FindWithTag("Enemy");
-
-        //if (enemyDragonObject != null)
-        //{
-        //enemyDragon = enemyDragonObject.GetComponent<EnemyDragon>();
-        //}
-        //if (enemyDragonObject == null)
-        //{
-        // Debug.Log("Cannot find 'EnemyDragon' script");
-        //}
-
-        dragonRange = 30f;
-        InvokeRepeating("UpdateTarget", 0f, 1f);
+        dragonRange = 25f;
+        InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
     void Update()
@@ -52,7 +35,7 @@ public class FireDragon : MonoBehaviour
         enemies.AddRange(myEnemies);
         float closestDistance = Mathf.Infinity;
         GameObject closestEnemy = null;
-        foreach (GameObject enemy in enemies) 
+        foreach (GameObject enemy in enemies)
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
             if (distanceToEnemy < closestDistance)
@@ -64,21 +47,19 @@ public class FireDragon : MonoBehaviour
 
         if (closestEnemy != null && closestDistance <= dragonRange)
         {
-            target = closestEnemy.transform;
-            if (closestEnemy.CompareTag("Rock"))
-            {
-                closestEnemy.GetComponent<EnemyRockDragon>().TakeDamage(fireDamage / 2);
-                GetComponent<AudioSource>().PlayOneShot(fireSounds);
-                StartCoroutine(spawnFire());
 
+            if (closestEnemy.GetComponent<dragonmovement>().isSlow == false)
+            {
+                target = closestEnemy.transform;
+                closestEnemy.GetComponent<dragonmovement>().moveSpeed -= 5f;
+                GetComponent<AudioSource>().PlayOneShot(slowSound);
+                closestEnemy.GetComponent<dragonmovement>().isSlow = true;
             }
             else
             {
-                closestEnemy.GetComponent<EnemyDragon>().TakeDamage(fireDamage);
-                GetComponent<AudioSource>().PlayOneShot(fireSounds);
-                StartCoroutine(spawnFire());
+                return;
             }
-                
+
         }
         else
         {
@@ -86,30 +67,9 @@ public class FireDragon : MonoBehaviour
         }
     }
 
-    //void OnTriggerEnter(Collider other)
-    //{
-        //if (other.CompareTag("Enemy"))
-        //{
-            //enemyDragon.TakeDamage(fireDamage);
-        //}
-
-        
-
-    //}
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, dragonRange);
     }
-
-    IEnumerator spawnFire()
-    {
-        Instantiate(fireParticles, mouth);
-        yield return new WaitForSeconds(4f);
-    }
-
-
-
-
 }

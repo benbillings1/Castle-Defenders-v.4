@@ -5,7 +5,6 @@ using UnityEngine;
 public class BombDragon : MonoBehaviour
 {
     public float bombDamage = 20f;
-    public int health = 100;
     public Transform target;
     public float dragonRange;
     public Transform dragonRotate;
@@ -53,7 +52,7 @@ public class BombDragon : MonoBehaviour
             target = closestEnemy.transform;
             if (closestEnemy.CompareTag("Rock"))
             {
-                closestEnemy.GetComponent<EnemyRockDragon>().TakeDamage(bombDamage * 1.5f);
+                closestEnemy.GetComponent<EnemyRockDragon>().TakeDamage(bombDamage);
                 GetComponent<AudioSource>().PlayOneShot(explosion);
                 Instantiate(explosionParticle, closestEnemy.transform);
             }

@@ -8,6 +8,8 @@ public class dragonmovement : MonoBehaviour
     public Transform[] waypoints;
     public Transform dragonModel;
     int curNodeIndex = 0;
+    public float moveSpeed = 10;
+    public bool isSlow = false;
     
 
     void Start()
@@ -20,7 +22,7 @@ public class dragonmovement : MonoBehaviour
     {
         //Makes dragon move toward nodes
         Vector3 target = new Vector3(curNodeTarget.position.x, transform.position.y, curNodeTarget.position.z);
-        transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * 10f);
+        transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * moveSpeed);
 
         //Fixes direction dragon is looking
         Vector3 forward = target - transform.position;
@@ -43,6 +45,12 @@ public class dragonmovement : MonoBehaviour
 
             
         }
+
+        //if (isSlow == true)
+        //{
+            //StartCoroutine(FastAgain());
+        //}
+        
     }
 
 
@@ -51,4 +59,11 @@ public class dragonmovement : MonoBehaviour
         waypoints = nodes;
     }
 
+    IEnumerator FastAgain()
+    {
+        yield return new WaitForSeconds(10f);
+        isSlow = false;
+        moveSpeed += 5;
+
+    }
 }

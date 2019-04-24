@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnemyDragon : MonoBehaviour
 {
     private float startHealth = 100f;
-    private int loot = 25;
+    private int loot = 20;
 
     public float damage = 10f;
     public float health;

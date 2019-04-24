@@ -381,6 +381,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   dragonModel: {fileID: 2313562678439795138}
+  moveSpeed: 10
+  isSlow: 0
 --- !u!54 &6398685507978997507
 Rigidbody:
   m_ObjectHideFlags: 0

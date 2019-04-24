@@ -7,6 +7,7 @@ public class Shop : MonoBehaviour
 
     public DragonBlueprint fireDragon;
     public DragonBlueprint bombDragon;
+    public DragonBlueprint timeDragon;
 
     BuildManager buildManager;
 
@@ -23,8 +24,15 @@ public class Shop : MonoBehaviour
 
     public void SelectBombDragon()
     {
-        Debug.Log("Bomb Dragon Seected");
+        Debug.Log("Bomb Dragon Selected");
         buildManager.SelectDragonToBuild(bombDragon);
     }
+
+    public void SelectTimeDragon()
+    {
+        Debug.Log("Time Dragon Selected");
+        buildManager.SelectDragonToBuild(timeDragon);
+    }
 }
+
 
