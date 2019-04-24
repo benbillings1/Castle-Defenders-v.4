@@ -56,6 +56,10 @@ public class Castle : MonoBehaviour
             TakeDamage(other.gameObject.GetComponent<EnemyDragon>().damage * Time.deltaTime * .1f);
 
         }
+        else
+        {
+            TakeDamage(other.gameObject.GetComponent<EnemyRockDragon>().damage * Time.deltaTime * .1f);
+        }
 
     }
 
