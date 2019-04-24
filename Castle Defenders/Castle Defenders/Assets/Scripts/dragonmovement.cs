@@ -8,13 +8,15 @@ public class dragonmovement : MonoBehaviour
     public Transform[] waypoints;
     public Transform dragonModel;
     int curNodeIndex = 0;
-    public float moveSpeed = 10;
+    public float moveSpeed;
     public bool isSlow = false;
+    public float originalSpeed = 10f;
     
 
     void Start()
     {
         curNodeTarget = waypoints[0];
+        moveSpeed = originalSpeed;
     }
 
     
@@ -46,10 +48,10 @@ public class dragonmovement : MonoBehaviour
             
         }
 
-        //if (isSlow == true)
-        //{
-            //StartCoroutine(FastAgain());
-        //}
+        if (isSlow == true)
+        {
+            StartCoroutine(FastAgain());
+        }
         
     }
 
@@ -61,9 +63,9 @@ public class dragonmovement : MonoBehaviour
 
     IEnumerator FastAgain()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(15f);
         isSlow = false;
-        moveSpeed += 5;
+        moveSpeed = originalSpeed;
 
     }
 }

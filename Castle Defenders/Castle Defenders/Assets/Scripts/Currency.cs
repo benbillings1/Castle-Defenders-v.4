@@ -7,7 +7,7 @@ public class Currency : MonoBehaviour
 {
     public Text Text;
     public static int gold;
-    public int startGold = 400;
+    public int startGold = 500;
     
 
     public void Start()
