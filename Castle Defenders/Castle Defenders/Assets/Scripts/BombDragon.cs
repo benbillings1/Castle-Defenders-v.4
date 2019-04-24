@@ -11,6 +11,8 @@ public class BombDragon : MonoBehaviour
     public Transform dragonRotate;
     public float rotationSpeed = 10f;
     public AudioClip explosion;
+    public GameObject explosionParticle;
+    
 
     void Start()
     {
@@ -53,11 +55,13 @@ public class BombDragon : MonoBehaviour
             {
                 closestEnemy.GetComponent<EnemyRockDragon>().TakeDamage(bombDamage * 1.5f);
                 GetComponent<AudioSource>().PlayOneShot(explosion);
+                Instantiate(explosionParticle, closestEnemy.transform);
             }
             else
             {
                 closestEnemy.GetComponent<EnemyDragon>().TakeDamage(bombDamage);
                 GetComponent<AudioSource>().PlayOneShot(explosion);
+                Instantiate(explosionParticle, closestEnemy.transform);
             }
 
         }

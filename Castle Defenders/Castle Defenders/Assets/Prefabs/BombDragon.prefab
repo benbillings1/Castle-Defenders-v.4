@@ -129,6 +129,9 @@ MonoBehaviour:
   dragonRotate: {fileID: 3057794080152452980}
   rotationSpeed: 10
   explosion: {fileID: 8300000, guid: 83a3d45944f24b647a973099cc6fb1d3, type: 3}
+  explosionParticle: {fileID: 3789675612021929250, guid: 42520b57de9c97b4187725e08a9b54a1,
+    type: 3}
+  mouth: {fileID: 0}
 --- !u!82 &6702907426564452340
 AudioSource:
   m_ObjectHideFlags: 0
@@ -147,7 +150,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 200
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

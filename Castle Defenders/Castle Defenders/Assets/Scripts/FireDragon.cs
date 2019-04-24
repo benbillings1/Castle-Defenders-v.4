@@ -12,6 +12,8 @@ public class FireDragon : MonoBehaviour
     public Transform dragonRotate;
     public float rotationSpeed = 10f;
     public AudioClip fireSounds;
+    public GameObject fireParticles;
+    public Transform mouth;
 
     //private EnemyDragon enemyDragon;
 
@@ -30,7 +32,7 @@ public class FireDragon : MonoBehaviour
         //}
 
         dragonRange = 30f;
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        InvokeRepeating("UpdateTarget", 0f, 1f);
     }
 
     void Update()
@@ -68,12 +70,14 @@ public class FireDragon : MonoBehaviour
             {
                 closestEnemy.GetComponent<EnemyRockDragon>().TakeDamage(fireDamage / 2);
                 GetComponent<AudioSource>().PlayOneShot(fireSounds);
+                StartCoroutine(spawnFire());
 
             }
             else
             {
                 closestEnemy.GetComponent<EnemyDragon>().TakeDamage(fireDamage);
                 GetComponent<AudioSource>().PlayOneShot(fireSounds);
+                StartCoroutine(spawnFire());
             }
                 
         }
@@ -99,6 +103,13 @@ public class FireDragon : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, dragonRange);
     }
+
+    IEnumerator spawnFire()
+    {
+        Instantiate(fireParticles, mouth);
+        yield return new WaitForSeconds(4f);
+    }
+
 
 
 

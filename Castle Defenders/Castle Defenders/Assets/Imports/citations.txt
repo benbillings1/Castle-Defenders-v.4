@@ -4,3 +4,4 @@ Got white square from shadeofthebodhitree.com
 Got cobblestone texture from pxhere.com
 Got fantasy collection music lite by Vasco Grossmann from the unity store
 Got pyro particles from unity store
+Got unity particle pack from unity store which is where I got the fire and explosion particles from
